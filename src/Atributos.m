@@ -7,5 +7,5 @@ X = X(2:size(X,1),4:9);
 
 % Calcula atributos individuais ou do time de acordo com o 'id'
 if (id > 0)
-      X = mean(X(id,:), 1);
+  X = mean(X(id,:), 1);
 endif
