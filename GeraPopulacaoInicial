@@ -1,0 +1,26 @@
+clear all;
+%-------------------------------------------------------------------------- 
+% Função que cria a população inicial de heróis
+%--------------------------------------------------------------------------
+
+%Numero de individuos da populaçao
+NumPop= 10;
+NumGenes=10;
+
+%Inicializaçao da Populaçao
+P = zeros(NumPop,NumGenes);
+
+
+for i = 1:NumPop
+    for t = 1:381
+        Lista(t) = t;
+    end     
+    for j = 1:NumGenes
+        gen = randi(381,1);
+        while Lista(gen) < 1
+            gen = randi(381,1);
+        end
+        P(i,j) = Lista(gen);
+        Lista(gen) = 0;
+    end
+end
