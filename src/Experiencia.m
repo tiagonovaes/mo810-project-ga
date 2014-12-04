@@ -1,12 +1,9 @@
-function X=Experiencia(filename)
+function X=Experiencia(lista, herois, viloes)
 
-% Le um arquivo CSV
-L = dlmread(filename, ";");
-% Busca a lista de experiencia
-L = L(2:size(L,1), :);
-
-% Cria matriz de adjacencias
-X = zeros(size(L,1), size(L,1));
-for i = 1:size(L,1)
-  X(L(i,1),L(i,2)) = L(i,3);
+% Calcula experiencia de luta entre um grupo de herois e viloes
+X = 0;
+for i = 1:length(herois)
+  for j = 1:length(viloes)
+    X += lista(herois(i), viloes(j));
+  endfor
 endfor
